@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estadísticas de Fútbol</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simpledotcss/simple.min.css">
+</head>
+<body>
+  <h1>⚽ Estadísticas de Fútbol</h1>
+  <p>Resultados de los últimos partidos</p>
+
+  <table id="tablaPartidos">
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Equipo Local</th>
+        <th>Goles Local</th>
+        <th>Equipo Visitante</th>
+        <th>Goles Visitante</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <h2>🏆 Totales por Equipo</h2>
+  <canvas id="grafico"></canvas>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+[
+  { "fecha": "2025-10-01", "local": "Barcelona", "golesLocal": 3, "visitante": "Real Madrid", "golesVisitante": 1 },
+  { "fecha": "2025-10-05", "local": "Valencia", "golesLocal": 2, "visitante": "Sevilla", "golesVisitante": 2 },
+  { "fecha": "2025-10-10", "local": "Real Madrid", "golesLocal": 4, "visitante": "Betis", "golesVisitante": 0 },
+  { "fecha": "2025-10-12", "local": "Barcelona", "golesLocal": 1, "visitante": "Valencia", "golesVisitante": 1 }
+]
