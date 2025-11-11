@@ -1,32 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Estadísticas de Fútbol</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simpledotcss/simple.min.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Estadísticas Patufet — Dashboard</title>
+
+  <!-- Estilos simples -->
+  <style>
+    body { font-family: Inter, Arial, sans-serif; margin: 18px; background:#f7fafc; color:#1f2937; }
+    header { display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; }
+    .cards { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:18px; }
+    .card { background:white; padding:12px 16px; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,0.06); min-width:160px; }
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:18px; align-items:start; }
+    .chart-box { background:white; padding:12px; border-radius:8px; box-shadow:0 1px 6px rgba(0,0,0,0.06); }
+    table { width:100%; border-collapse: collapse; }
+    th, td { padding:8px; text-align:left; border-bottom:1px solid #eef2f7; }
+    .muted { color:#6b7280; font-size:0.9rem; }
+    footer { margin-top:18px; font-size:0.9rem; color:#6b7280; }
+  </style>
+
+  <!-- Librerías desde CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 </head>
 <body>
-  <h1>⚽ Estadísticas de Fútbol</h1>
-  <p>Resultados de los últimos partidos</p>
+  <header>
+    <div>
+      <h1>Dashboard de estadísticas — Patufet</h1>
+      <div class="muted">Carga CSV desde el repo y visualiza analíticas básicas</div>
+    </div>
+    <div class="muted">Usuario: XavierGallart</div>
+  </header>
 
-  <table id="tablaPartidos">
-    <thead>
-      <tr>
-        <th>Fecha</th>
-        <th>Equipo Local</th>
-        <th>Goles Local</th>
-        <th>Equipo Visitante</th>
-        <th>Goles Visitante</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
+  <section class="cards" id="summary-cards">
+    <!-- cards dinámicos -->
+  </section>
 
-  <h2>🏆 Totales por Equipo</h2>
-  <canvas id="grafico"></canvas>
+  <section class="grid">
+    <div class="chart-box">
+      <h3>Goleadores (Top)</h3>
+      <canvas id="goalsBar"></canvas>
+    </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="script.js"></script>
+    <div class="chart-box">
+      <h3>Distribución de goles por jugador</h3>
+      <div id="goalsDonut"></div>
+    </div>
+
+    <div class="chart-box">
+      <h3>Goles por partido (serie)</h3>
+      <canvas id="goalsLine"></canvas>
+    </div>
+
+    <div class="chart-box">
+      <h3>Minutos jugados (Partido seleccionado)</h3>
+      <select id="selectMatch"></select>
+      <div id="minutesBar"></div>
+    </div>
+  </section>
+
+  <section style="margin-top:18px;">
+    <div class="chart-box">
+      <h3>Tabla y discrepancias detectadas</h3>
+      <div id="discrepancies"></div>
+    </div>
+  </section>
+
+  <footer>
+    Este demo usa Chart.js y ApexCharts para visualizaciones, y PapaParse para cargar CSV. Ajusta las URLs de los CSV en stats.js si tu estructura cambia.
+  </footer>
+
+  <script src="stats.js"></script>
 </body>
 </html>
