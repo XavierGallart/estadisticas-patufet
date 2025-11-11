@@ -1,3 +1,9 @@
-Partido ID,Autor,Asistencia,Tipo
-1,Juan,Pedro,Normal
-1,Luis,,Penalti
+Partido,ID,Autor,Cantidad
+1,Pol,1
+1,Xavi M.,1
+1,Lluís Esteve,1
+2,Gamon,2
+2,Pol,2
+2,Lluís Esteve,1
+2,Xavi G.,1
+2,Sari,1
